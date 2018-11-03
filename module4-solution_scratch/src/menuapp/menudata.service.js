@@ -30,7 +30,7 @@ function MenuDataService($http) {
       }
     });
     return promise.then(function (response){
-      return response.data;
+      return response.data.menu_items;
     });
   };
 
