@@ -21,7 +21,7 @@ function SignUpService($q, $http, ApiPath) {
     return deferred.promise;
   };
 
-  service.RegisterUser = function (user)
+  service.registerUser = function (user)
   {
     var menuItem  = user.menuitem;
     return $http({
@@ -34,6 +34,16 @@ function SignUpService($q, $http, ApiPath) {
     }, function (response){
       return false;
     });
+  };
+
+  service.getUserInfo = function ()
+  {
+    var deferred = $q.defer();
+    deferred.resolve(service.userInfo);
+    // deferred.resolve(true);
+
+    return deferred.promise;
+
   };
   //
   // service.getCategories = function () {

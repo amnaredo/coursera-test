@@ -55,17 +55,16 @@ function routeConfig ($stateProvider) {
     .state('public.myinfo', {
       url: '/myinfo',
       templateUrl: 'src/public/signup/myinfo.html',
-      controller: 'SignUpFormController',
-      controllerAs: 'reg'
-      //
-      // resolve: {
-      //    signedUp: ['SignUpService', function (SignUpService) {
-      //      return SignUpService.checkSignUp();
-      //    }],
-      //    userInfo: ['SignUpService', function (SignUpService) {
-      //      return SignUpService.checkSignUp();
-      //    }]
-      // }
+      controller: 'MyInfoController',
+      controllerAs: 'info',
+      resolve: {
+         signedUp: ['SignUpService', function (SignUpService) {
+           return SignUpService.checkSignUp();
+         }],
+         userInfo: ['SignUpService', function (SignUpService) {
+           return SignUpService.getUserInfo();
+         }]
+      }
     });
 }
 })();

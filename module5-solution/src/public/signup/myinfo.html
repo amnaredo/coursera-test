@@ -1,3 +1,11 @@
 <div class="container">
-  <span ng-hide="reg.signedUp">Not signed up yet. <a ui-sref="public.signup">Sign up now!</a></span>
+  <span ng-hide="info.signedUp">Not signed up yet. <a ui-sref="public.signup">Sign up now!</a></span>
+  <div ng-show="info.signedUp">
+    <span>First name: {{ reg.userInfo.firstname }}</span><br />
+    <span>Last name: {{ reg.userInfo.lastname }}</span><br />
+    <span>Email address: {{ reg.userInfo.email }}</span><br />
+    <span>Phone number: {{ reg.userInfo.phone }}</span><br />
+    <span>Favorite dish: {{ reg.userInfo.menuitem }}</span><br />
+
+
 </div>

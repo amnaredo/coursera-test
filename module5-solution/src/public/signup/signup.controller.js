@@ -3,16 +3,18 @@
 angular.module('public')
 .controller('SignUpFormController', SignUpFormController);
 
-SignUpFormController.$inject = ['signedUp', 'SignUpService'];
-function SignUpFormController(signedUp, SignUpService) {
+SignUpFormController.$inject = ['signedUp', 'userInfo', 'SignUpService'];
+function SignUpFormController(signedUp, userInfo, SignUpService) {
   var reg = this;
   reg.signedUp = signedUp;
+  reg.userInfo = userInfo;
 
 
   reg.submit = function () {
-    reg.signedUp = SignUpService.RegisterUser(reg.user);
+    reg.signedUp = SignUpService.registerUser(reg.user);
     // reg.completed = true;
   };
+
 }
 
 })();
