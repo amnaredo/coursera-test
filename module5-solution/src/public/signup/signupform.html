@@ -1,0 +1,75 @@
+<div class="container">
+  <fieldset ng-hide="reg.signedUp">
+    <legend>Sign Up</legend>
+    <form name='regForm' novalidate>
+      <!-- <span>First name:</span> -->
+      <input type="text" name="firstname" placeholder="First Name"
+        ng-model="reg.user.firstname"
+        required
+        minlength="1"
+        ng-maxlength="10">
+        <!-- {{ reg.user.firstname }} -->
+        <span
+          ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+          You must enter a valid first name
+        </span>
+        <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+          First name must not be longer than 10 characters
+        </span>
+        <br>
+
+      <!-- <span>Last name:</span> -->
+      <input type="text" name="lastname" placeholder="Last Name"
+        ng-model="reg.user.lastname"
+        required
+        minlength="1"
+        ng-maxlength="10">
+        <!-- {{ reg.user.lastname }} -->
+        <span
+          ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+          You must enter a valid last name
+        </span>
+        <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+          Last name must not be longer than 10 characters
+        </span>
+        <br>
+
+      <!-- <span>Email address:</span> -->
+      <input type="email" name="email" placeholder="Email"
+        ng-model="reg.user.email"
+        required>
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+
+      <!-- <span>Phone number:</span> -->
+      <input type="text" name="phone" placeholder="Phone ###-###-####"
+        ng-model="reg.user.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+        <br>
+
+      <input type="text" name="menuitem" placeholder="Favorite dish"
+        ng-model="reg.user.menuitem"
+        required>
+        <!-- {{ reg.user.lastname }} -->
+        <span
+          ng-if="regForm.menuitem.$error.required && regForm.menuitem.$touched">
+          You must enter a valid menu item
+        </span>
+        <br>
+
+      <button
+        ng-disabled="regForm.$invalid"
+        ng-click="reg.submit()">Submit</button>
+<!--
+        <div style="margin-top: 10px;">
+          Form valid? {{ regForm.$valid }}
+        </div> -->
+    </form>
+  </fieldset>
+  <span ng-show="reg.signedUp">Your information has been saved</span>
+</div>
