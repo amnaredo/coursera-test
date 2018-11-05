@@ -60,6 +60,10 @@
           ng-if="regForm.menuitem.$error.required && regForm.menuitem.$touched">
           You must enter a valid menu item
         </span>
+        <span
+          ng-show="!reg.existsItemNumber">
+          No such menu number exists
+        </span>
         <br>
 
       <button

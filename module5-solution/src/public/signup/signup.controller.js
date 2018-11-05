@@ -8,10 +8,14 @@ function SignUpFormController(signedUp, SignUpService) {
   var reg = this;
   reg.signedUp = signedUp;
 
+  reg.existsItemNumber = true;
+
 
   reg.submit = function () {
-    reg.signedUp = SignUpService.registerUser(reg.user);
-    // reg.completed = true;
+    SignUpService.registerUser(reg.user)
+    .then(function(response) {
+      reg.existsItemNumber = reg.signedUp = response;
+    });
   };
 
 }
