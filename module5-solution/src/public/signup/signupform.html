@@ -1,5 +1,5 @@
 <div class="container">
-  <fieldset ng-hide="reg.signedUp">
+  <fieldset>
     <legend>Sign Up</legend>
     <form name='regForm' novalidate>
       <!-- <span>First name:</span> -->
@@ -59,6 +59,10 @@
         <span
           ng-if="regForm.menuitem.$error.required && regForm.menuitem.$touched">
           You must enter a valid menu item
+        </span>
+        <span
+          ng-show="!reg.existsItemNumber">
+          No such menu number exists
         </span>
         <br>
 

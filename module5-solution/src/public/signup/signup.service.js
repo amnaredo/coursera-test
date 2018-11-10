@@ -21,6 +21,11 @@ function SignUpService($q, $http, ApiPath) {
     return deferred.promise;
   };
 
+  service.checkDataIsValid = function()  {
+    return service.userInfo !== {};
+
+  }
+
   service.registerUser = function (user)
   {
     var menuItem  = user.menuitem;
@@ -29,9 +34,14 @@ function SignUpService($q, $http, ApiPath) {
     }).then(function (response){
       service.userInfo = user;
       service.userInfo.menuItemData = response.data;
+
       service.signedUp = true;
-      return  true;
+
+
+      return true;
     }, function (response){
+      service.signedUp = false;
+
       return false;
     });
   };
