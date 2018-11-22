@@ -22,3 +22,44 @@ overflow: hidden;
   border-top: 1px #DDDDDD solid;
   border-bottom: 1px #DDDDDD solid;
 }
+
+.navbar-brand {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.category {
+  background-color: #DDDDDD;
+  margin: 2em;
+  padding: 1em 2em;
+}
+
+p.text-center{
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+#nav-list {
+  background-color: white;
+}
+#nav-list li {
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 1px solid black;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  margin: 0;
+}
+#collapsable-nav {
+  padding-left: 0;
+  padding-right: 0;
+}
