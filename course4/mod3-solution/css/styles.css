@@ -41,8 +41,7 @@ overflow: hidden;
   padding: 1em 2em;
 }
 
-p.text-center{
-  text-align: center;
+h1.text-center{
   font-weight: bold;
   margin-bottom: 0;
   font-size: 2em;
